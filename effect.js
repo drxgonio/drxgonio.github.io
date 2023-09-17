@@ -1,3 +1,28 @@
+var currentDate = new Date();
+
+var targetDate = new Date('2023-09-27');
+
+// Get the current date
+var currentDate = new Date();
+
+// Calculate the time difference in milliseconds
+var timeDifference = targetDate - currentDate;
+
+// Calculate the number of days remaining
+var daysRemaining = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+
+// Update the countdown in the div
+
+// Check if the current date is equal to the target date
+if (currentDate.toDateString() === targetDate.toDateString()) {
+    // If the dates are equal, show the div
+    document.getElementById('isOK').style.display = 'block';
+}
+else {
+    document.getElementById('isOK').style.display = 'none';
+    document.getElementById('day').textContent = 'Còn: ' + daysRemaining + ' days nữa nhé. Hãy quay lại vào đúng ngày này <3';
+}
+
 $(window).load(function () {
     $('.loading').fadeOut('fast');
     $('.container').fadeIn('fast');
@@ -14,13 +39,13 @@ $('document').ready(function () {
         // $('#b55').animate({top: 240, left: vw + 50}, 500);
         // $('#b66').animate({top: 240, left: vw + 150}, 500);
         // $('#b77').animate({top: 240, left: vw + 250}, 500);
-          $('#b11').animate({top: 240, left: vw - vw/1}, 500);  
-          $('#b22').animate({top: 240, left: vw - vw/1.5}, 500);
-          $('#b33').animate({top: 240, left: vw - vw/3}, 500);  
-          $('#b44').animate({top: 240, left: vw - vw/10}, 500); 
-          $('#b55').animate({top: 240, left: vw + vw/6}, 500);  
-          $('#b66').animate({top: 240, left: vw + vw/2}, 500);  
-          $('#b77').animate({top: 240, left: vw + vw/1.3}, 500);
+        $('#b11').animate({ top: 240, left: vw - vw / 1 }, 500);
+        $('#b22').animate({ top: 240, left: vw - vw / 1.5 }, 500);
+        $('#b33').animate({ top: 240, left: vw - vw / 3 }, 500);
+        $('#b44').animate({ top: 240, left: vw - vw / 10 }, 500);
+        $('#b55').animate({ top: 240, left: vw + vw / 6 }, 500);
+        $('#b66').animate({ top: 240, left: vw + vw / 2 }, 500);
+        $('#b77').animate({ top: 240, left: vw + vw / 1.3 }, 500);
     });
 
     $('#turn_on').click(function () {
@@ -37,7 +62,7 @@ $('document').ready(function () {
     });
 
     var audio; vw = $(window).width() / 2;
-    console.log(vw,$(window).width());
+    console.log(vw, $(window).width());
     var time = 5000;
     $('#play').click(function () {
         audio = $('.song')[0];
@@ -71,63 +96,63 @@ $('document').ready(function () {
     });
 
     function loopOne() {
-        var randleft = vw*2 * Math.random();
+        var randleft = vw * 2 * Math.random();
         var randtop = 500 * Math.random();
-        $('#b1').animate({left: randleft, bottom: randtop}, 10000, function () {
+        $('#b1').animate({ left: randleft, bottom: randtop }, 10000, function () {
             loopOne();
         });
     }
 
     function loopTwo() {
-        var randleft = vw*2 * Math.random();
+        var randleft = vw * 2 * Math.random();
         var randtop = 500 * Math.random();
-        $('#b2').animate({left: randleft, bottom: randtop}, 10000, function () {
+        $('#b2').animate({ left: randleft, bottom: randtop }, 10000, function () {
             loopTwo();
         });
     }
 
     function loopThree() {
-        var randleft = vw*2 * Math.random();
+        var randleft = vw * 2 * Math.random();
         var randtop = 500 * Math.random();
-        $('#b3').animate({left: randleft, bottom: randtop}, 10000, function () {
+        $('#b3').animate({ left: randleft, bottom: randtop }, 10000, function () {
             loopThree();
         });
     }
 
     function loopFour() {
-        var randleft = vw*2 * Math.random();
+        var randleft = vw * 2 * Math.random();
         var randtop = 500 * Math.random();
-        $('#b4').animate({left: randleft, bottom: randtop}, 10000, function () {
+        $('#b4').animate({ left: randleft, bottom: randtop }, 10000, function () {
             loopFour();
         });
     }
 
     function loopFive() {
-        var randleft = vw*2 * Math.random();
+        var randleft = vw * 2 * Math.random();
         var randtop = 500 * Math.random();
-        $('#b5').animate({left: randleft, bottom: randtop}, 10000, function () {
+        $('#b5').animate({ left: randleft, bottom: randtop }, 10000, function () {
             loopFive();
         });
     }
 
     function loopSix() {
-        var randleft = vw*2 * Math.random();
+        var randleft = vw * 2 * Math.random();
         var randtop = 500 * Math.random();
-        $('#b6').animate({left: randleft, bottom: randtop}, 10000, function () {
+        $('#b6').animate({ left: randleft, bottom: randtop }, 10000, function () {
             loopSix();
         });
     }
 
     function loopSeven() {
-        var randleft = vw*2 * Math.random();
+        var randleft = vw * 2 * Math.random();
         var randtop = 500 * Math.random();
-        $('#b7').animate({left: randleft, bottom: randtop}, 10000, function () {
+        $('#b7').animate({ left: randleft, bottom: randtop }, 10000, function () {
             loopSeven();
         });
     }
 
     $('#balloons_flying').click(function () {
-        $('.balloon-border').animate({top: -vw}, 8000);
+        $('.balloon-border').animate({ top: -vw }, 8000);
         $('#b1,#b4,#b5,#b7').addClass('balloons-rotate-behaviour-one');
         $('#b2,#b3,#b6').addClass('balloons-rotate-behaviour-two');
         // $('#b3').addClass('balloons-rotate-behaviour-two');
@@ -171,13 +196,13 @@ $('document').ready(function () {
         $('#b5').attr('id', 'b55')
         $('#b6').attr('id', 'b66')
         $('#b7').attr('id', 'b77')
-      $('#b11').animate({top: 240, left: vw - vw/1}, 500);
-      $('#b22').animate({top: 240, left: vw - vw/1.5}, 500);
-      $('#b33').animate({top: 240, left: vw - vw/3}, 500);
-      $('#b44').animate({top: 240, left: vw - vw/10}, 500);
-      $('#b55').animate({top: 240, left: vw + vw/6}, 500);
-      $('#b66').animate({top: 240, left: vw + vw/2}, 500);
-      $('#b77').animate({top: 240, left: vw + vw/1.3}, 500);
+        $('#b11').animate({ top: 240, left: vw - vw / 1 }, 500);
+        $('#b22').animate({ top: 240, left: vw - vw / 1.5 }, 500);
+        $('#b33').animate({ top: 240, left: vw - vw / 3 }, 500);
+        $('#b44').animate({ top: 240, left: vw - vw / 10 }, 500);
+        $('#b55').animate({ top: 240, left: vw + vw / 6 }, 500);
+        $('#b66').animate({ top: 240, left: vw + vw / 2 }, 500);
+        $('#b77').animate({ top: 240, left: vw + vw / 1.3 }, 500);
         $('.balloons').css('opacity', '0.9');
         $('.balloons h2').fadeIn(3000);
         $(this).fadeOut('slow').delay(3000).promise().done(function () {
