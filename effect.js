@@ -1,6 +1,6 @@
 var currentDate = new Date();
 
-var targetDate = new Date('2023-09-27');
+var targetDate = new Date('2023-09-22');
 
 // Get the current date
 var currentDate = new Date();
@@ -14,13 +14,14 @@ var daysRemaining = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
 // Update the countdown in the div
 
 // Check if the current date is equal to the target date
-if (currentDate.toDateString() === targetDate.toDateString()) {
+if (currentDate.toDateString() !== targetDate.toDateString()) {
     // If the dates are equal, show the div
     document.getElementById('isOK').style.display = 'block';
 }
 else {
-    document.getElementById('isOK').style.display = 'none';
-    document.getElementById('day').textContent = 'Còn: ' + daysRemaining + ' days nữa nhé. Hãy quay lại vào đúng ngày này <3';
+    // document.getElementById('isOK').style.display = 'none';
+    // document.getElementById('day').textContent = 'Còn: ' + daysRemaining + ' days nữa nhé. Hãy quay lại vào đúng ngày này <3';
+    document.getElementById('isOK').style.display = 'block';
 }
 
 $(window).load(function () {
